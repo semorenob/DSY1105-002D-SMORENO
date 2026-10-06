@@ -1,6 +1,5 @@
 package com.example.modoguardian.ui.screens
 
-import android.widget.Button
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,13 +17,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.modoguardian.ui.theme.Typography
 import com.example.modoguardian.viewmodel.EstadoViewModel
 
 @Composable
-fun HomeScreen(
+fun StartPage(
     viewModel: EstadoViewModel = viewModel(),
     navController: NavController,
     ) {
@@ -45,6 +47,12 @@ fun HomeScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
+            Text("Bienvenido.", style = MaterialTheme.typography.titleLarge, fontFamily = FontFamily.Serif)
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+
             Button(
                 onClick = {
                     navController.navigate("registro")
@@ -71,8 +79,5 @@ fun HomeScreen(
                 Text("Iniciar Sesión", style = MaterialTheme.typography.titleLarge)
             }
         }
-
-
     }
-
 }
