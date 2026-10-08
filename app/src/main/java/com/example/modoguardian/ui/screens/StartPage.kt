@@ -45,7 +45,7 @@ fun StartPage(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Text("Bienvenido.", style = MaterialTheme.typography.titleLarge)
+            Text("Modo Guardian", style = MaterialTheme.typography.headlineLarge)
 
             Spacer(modifier = Modifier.height(32.dp))
 
@@ -56,10 +56,8 @@ fun StartPage(
                 },
                 colors = ButtonDefaults.buttonColors(),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp)
             ) {
-                Text("Registrar", style = MaterialTheme.typography.titleLarge)
+                Text("Registrar", style = MaterialTheme.typography.labelLarge)
             }
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -70,10 +68,8 @@ fun StartPage(
                 },
                 colors = ButtonDefaults.buttonColors(),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp)
             ) {
-                Text("Iniciar Sesión", style = MaterialTheme.typography.titleLarge)
+                Text("Iniciar Sesión", style = MaterialTheme.typography.labelLarge)
             }
         }
     }

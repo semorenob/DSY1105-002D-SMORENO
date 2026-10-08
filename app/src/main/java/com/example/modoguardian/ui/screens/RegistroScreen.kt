@@ -37,7 +37,7 @@ fun RegistroScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        Text("Registrarse", style = MaterialTheme.typography.titleLarge)
+        Text("Registrarse", style = MaterialTheme.typography.headlineMedium)
         // Campo nombre
         OutlinedTextField(
             value = estado.nombre,
