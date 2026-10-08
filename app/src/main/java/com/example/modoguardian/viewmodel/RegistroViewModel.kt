@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
-class UsuarioViewModel: ViewModel() {
+class RegistroViewModel: ViewModel() {
     // Estado interno mutable
     private val _estado = MutableStateFlow(UsuarioUiState())
 

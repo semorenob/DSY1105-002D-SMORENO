@@ -17,12 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.modoguardian.ui.theme.Typography
 import com.example.modoguardian.viewmodel.EstadoViewModel
 
 @Composable
@@ -32,7 +29,7 @@ fun StartPage(
     ) {
     val estado = viewModel.activo.collectAsState()
 
-    if (estado.value == null) {
+    if ( estado.value == null ) {
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
@@ -48,9 +45,9 @@ fun StartPage(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Text("Bienvenido.", style = MaterialTheme.typography.titleLarge, fontFamily = FontFamily.Serif)
+            Text("Bienvenido.", style = MaterialTheme.typography.titleLarge)
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
 
             Button(
@@ -65,7 +62,7 @@ fun StartPage(
                 Text("Registrar", style = MaterialTheme.typography.titleLarge)
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
             Button(
                 onClick = {

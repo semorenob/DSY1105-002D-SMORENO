@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
@@ -21,12 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.modoguardian.viewmodel.UsuarioViewModel
+import com.example.modoguardian.viewmodel.RegistroViewModel
 
 @Composable
 fun RegistroScreen(
     navController: NavController,
-    viewModel: UsuarioViewModel
+    viewModel: RegistroViewModel
 ) {
     val estado by viewModel.estado.collectAsState()
 
@@ -36,6 +37,7 @@ fun RegistroScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
+        Text("Registrarse", style = MaterialTheme.typography.titleLarge)
         // Campo nombre
         OutlinedTextField(
             value = estado.nombre,

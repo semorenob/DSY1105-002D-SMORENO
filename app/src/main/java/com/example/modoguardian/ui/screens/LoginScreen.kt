@@ -16,12 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.modoguardian.viewmodel.UsuarioViewModel
+import com.example.modoguardian.viewmodel.LoginViewModel
 
 @Composable
 fun LoginScreen(
     navController: NavController,
-    viewModel: UsuarioViewModel
+    viewModel: LoginViewModel
 ) {
     val estado by viewModel.estado.collectAsState()
 
@@ -33,12 +33,12 @@ fun LoginScreen(
     ) {
         // Correo
         OutlinedTextField(
-            value = estado.correo,
-            onValueChange = viewModel::onCorreoChange,
+            value = estado.email,
+            onValueChange = viewModel::onEmailChange,
             label = { Text("Correo electronico") },
-            isError = estado.errores.correo != null,
+            isError = estado.errores.email != null,
             supportingText = {
-                estado.errores.correo?.let {
+                estado.errores.email?.let {
                     Text(it, color = MaterialTheme.colorScheme.error)
                 }
             },
@@ -47,13 +47,13 @@ fun LoginScreen(
 
         // Contrañeña
         OutlinedTextField(
-            value = estado.clave,
-            onValueChange = viewModel::onClaveChange,
+            value = estado.password,
+            onValueChange = viewModel::onPasswordChange,
             label = { Text("Contraseña") },
             visualTransformation = PasswordVisualTransformation(),
-            isError = estado.errores.clave != null,
+            isError = estado.errores.password != null,
             supportingText = {
-                estado.errores.clave?.let {
+                estado.errores.password?.let {
                     Text(it, color = MaterialTheme.colorScheme.error)
                 }
             },
@@ -63,7 +63,7 @@ fun LoginScreen(
         // TODO: Habilitar boton solo si isLoginEnabled es true
         Button(
             onClick = {
-                if (viewModel.validarFormularioLogin()) {
+                if (viewModel.validarFormulario()) {
                     navController.navigate("")
                 }
             },

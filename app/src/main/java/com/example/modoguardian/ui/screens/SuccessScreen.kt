@@ -9,10 +9,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.modoguardian.viewmodel.UsuarioViewModel
+import com.example.modoguardian.viewmodel.RegistroViewModel
 
 @Composable
-fun ResumenScreen(viewModel: UsuarioViewModel) {
+fun ResumenScreen(viewModel: RegistroViewModel) {
     val estado by viewModel.estado.collectAsState()
 
     Column(Modifier.padding(16.dp)) {
