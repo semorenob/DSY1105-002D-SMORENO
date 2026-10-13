@@ -18,6 +18,7 @@ import com.example.modoguardian.navigation.Screen
 import com.example.modoguardian.ui.screens.LoginScreen
 import com.example.modoguardian.ui.screens.RegistroScreen
 import com.example.modoguardian.ui.screens.StartPage
+import com.example.modoguardian.ui.screens.SuccessScreen
 import com.example.modoguardian.ui.theme.ModoGuardianTheme
 import com.example.modoguardian.viewmodel.LoginViewModel
 import com.example.modoguardian.viewmodel.MainViewModel
@@ -73,6 +74,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screen.RegistroScreen.route) {
                             RegistroScreen(navController = navController, viewModel = registroViewModel)
+                        }
+                        composable(route = Screen.SuccessScreen.route) {
+                            SuccessScreen(navController = navController, viewModel = registroViewModel)
                         }
                     }
                 }
