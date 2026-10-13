@@ -19,7 +19,6 @@ import com.example.modoguardian.ui.screens.LoginScreen
 import com.example.modoguardian.ui.screens.RegistroScreen
 import com.example.modoguardian.ui.screens.StartPage
 import com.example.modoguardian.ui.theme.ModoGuardianTheme
-import com.example.modoguardian.viewmodel.EstadoViewModel
 import com.example.modoguardian.viewmodel.LoginViewModel
 import com.example.modoguardian.viewmodel.MainViewModel
 import com.example.modoguardian.viewmodel.RegistroViewModel
@@ -34,7 +33,6 @@ class MainActivity : ComponentActivity() {
                 val viewModel: MainViewModel = viewModel()
                 val loginViewModel: LoginViewModel = viewModel()
                 val registroViewModel: RegistroViewModel = viewModel()
-                val estadoViewModel: EstadoViewModel = viewModel()
                 val navController = rememberNavController()
 
                 LaunchedEffect(key1 = Unit) {
@@ -68,7 +66,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     ) {
                         composable(route = Screen.StartPage.route) {
-                            StartPage(navController = navController, viewModel = estadoViewModel)
+                            StartPage(navController = navController)
                         }
                         composable(route = Screen.LoginScreen.route) {
                             LoginScreen(navController = navController, viewModel = loginViewModel)
